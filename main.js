@@ -38,7 +38,7 @@ function assignRGBValue(e) {
     a = 0.1;
   }
 
-  e.target.style.backgroundColor = `rgb(${r}, ${g}, ${b}, ${a})`;
+  e.target.style.backgroundColor = `rgba(${r}, ${g}, ${b}, ${a})`;
 }
 
 const gridSizeBtn = document.querySelector('#btn-div button');
