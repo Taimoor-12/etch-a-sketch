@@ -4,7 +4,7 @@ function createGrid(size) {
   for (let i = 1; i <= size * size; i++) {
     const div = document.createElement('div');
     div.style.width = `${100/size}%`;
-    div.addEventListener('mouseenter', assignRGBValue);
+    div.addEventListener('mouseenter', assignRGBAValues);
     container.appendChild(div);
   }
 }
@@ -15,24 +15,19 @@ function randomRGBValue() {
   return Math.floor(Math.random() * 256);
 }
 
-function getPreviousRBGValues(e) {
+function getPreviousRBGAValues(e) {
   const rgba = e.target.style.backgroundColor;
   return rgba.slice(5, -1).split(', ').map(v => +v.trim());
 }
 
-function assignRGBValue(e) {
-  let r, g, b, a;
+function assignRGBAValues(e) {
+  let [r, g, b, a] = [randomRGBValue(), randomRGBValue(), randomRGBValue(), 0.1];
 
   if (e.target.style.backgroundColor) {
-    [r, g, b, a] = getPreviousRBGValues(e);
+    [r, g, b, a] = getPreviousRBGAValues(e);
     if (a < 1.0) {
       a += 0.1;
     }
-  } else {
-    r = randomRGBValue();
-    g = randomRGBValue();
-    b = randomRGBValue();
-    a = 0.1;
   }
 
   e.target.style.backgroundColor = `rgba(${r}, ${g}, ${b}, ${a})`;
