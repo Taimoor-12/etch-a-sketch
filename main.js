@@ -9,4 +9,17 @@ function createGrid(size) {
   }
 }
 
-createGrid(16);
+createGrid(5);
+
+const gridSizeBtn = document.querySelector('#btn-div button');
+
+gridSizeBtn.addEventListener('click', () => {
+  const size = +prompt('Choose your grid size (max 100):', '16');
+  if (size > 100) {
+    alert('Size must be between 1 and 100!');
+    return;
+  }
+
+  container.innerHTML = '';
+  createGrid(size);
+});
