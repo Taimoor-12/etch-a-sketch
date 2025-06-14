@@ -24,5 +24,6 @@
 #btn-div button {
   width: 200px;
   height: 50px;
-  font-size: 18px;
+  font-size: 14px;
+  text-transform: uppercase;
 }
