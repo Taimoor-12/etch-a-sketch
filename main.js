@@ -42,7 +42,7 @@ const gridSizeBtn = document.querySelector('#btn-div button');
 
 gridSizeBtn.addEventListener('click', () => {
   const size = +prompt('Choose your grid size (max 100):', '16');
-  if (size > 100) {
+  if (!size || size < 1 || size > 100) {
     alert('Size must be between 1 and 100!');
     return;
   }
