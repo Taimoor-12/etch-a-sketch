@@ -9,7 +9,7 @@ function createGrid(size) {
   }
 }
 
-createGrid(5);
+createGrid(16);
 
 const gridSizeBtn = document.querySelector('#btn-div button');
 
