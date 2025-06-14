@@ -21,10 +21,7 @@ function getPreviousRBGValues(e) {
 }
 
 function assignRGBValue(e) {
-  let r;
-  let g;
-  let b;
-  let a;
+  let r, g, b, a;
 
   if (e.target.style.backgroundColor) {
     [r, g, b, a] = getPreviousRBGValues(e);
